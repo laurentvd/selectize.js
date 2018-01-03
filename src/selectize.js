@@ -627,6 +627,10 @@ $.extend(Selectize.prototype, {
 	 */
 	onBlur: function(e, dest) {
 		var self = this;
+		if (e && e.target === self.$control_input[0]) {
+			return;
+		}
+
 		if (!self.isFocused) return;
 		self.isFocused = false;
 
